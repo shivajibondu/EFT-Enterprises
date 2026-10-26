@@ -90,19 +90,28 @@ nav a:hover {
     display: none
 }
 
+
 .hero {
     min-height: 590px;
-    background: linear-gradient(90deg, #061c39 0%, #061c39ed 29%, #071f3db0 53%, #061c3922 100%), url('assets/new-grill-banner.png') center right/cover;
+    background: linear-gradient(
+        90deg,
+        #061c39 0%,
+        #061c39ed 29%,
+        #071f3db0 53%,
+        #061c3922 100%
+    ), url("assets/grill-service.webp") center right / cover;
     position: relative;
     color: white;
     display: flex;
     align-items: center;
-    padding: 65px 6%
+    padding: 65px 6%;
 }
 
+    
 .hero-content {
-    max-width: 690px
+    max-width: 690px;
 }
+
 
 .eyebrow,
 .kicker {
@@ -233,7 +242,7 @@ nav a:hover {
 
 .grill,
 .project-image {
-    background-image: url('assets/invisible-grills.jpg')
+    background-image: url('assets/invisible-grills.webp')
 }
 
 .safety {
@@ -438,7 +447,7 @@ footer {
 @media(max-width:530px) {
     .hero {
         min-height: 610px;
-        background: linear-gradient(90deg, #061c39ed, #061c39b8), url('assets/invisible-grills.jpg') center/cover
+        background: linear-gradient(90deg, #061c39ed, #061c39b8), url('assets/invisible-grills.webp') center/cover
     }
 
     .hero h1 {
@@ -485,7 +494,7 @@ footer {
 }
 
 .service .photo.grill {
-    background-image: url('assets/new-grill-banner.png');
+    background-image: url('assets/grill-service.webp');
 }
 
 .service .photo.safety {
@@ -506,34 +515,36 @@ footer {
 
 /* Use the clean banner on mobile too */
 
+
 @media (max-width: 530px) {
     .hero {
         background:
             linear-gradient(90deg, #061c39ed, #061c39b8),
-            url('assets/new-grill-banner.png') center / cover;
+            url("assets/grill-service.webp") center / cover;
     }
 }
+
 .service .photo.grill {
-    background-image: url('assets/grill-service.png') !important;
+    background-image: url('assets/grill-service.webp') !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .service .photo.safety {
-    background-image: url('assets/safety-nets.png') !important;
+    background-image: url('assets/safety-nets.webp') !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .service .photo.sports {
-    background-image: url('assets/sports-nets.png') !important;
+    background-image: url('assets/sports-nets.webp') !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 /* EFT Enterprise - Cloth Ceiling Hangers Photo */
 .service .photo.hanger {
-    background-image: url('assets/cloth-hangers.png') !important;
+    background-image: url('assets/cloth-hangers.webp') !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -617,78 +628,7 @@ footer {
 .service-grill a.service-button:hover {
     background: #005fc9;
 }
-<article class="service service-grill">
-    <div class="photo safety"></div>
 
-    <div class="service-details">
-        <span class="service-icon">✓</span>
-
-        <h3>Safety Nets</h3>
-
-        <p>
-            Reliable safety nets for balconies,
-            windows and open spaces.
-            Protection for children, pets and families.
-        </p>
-
-        <ul class="service-benefits">
-            <li>Balcony Safety Protection</li>
-            <li>Child and Pet Safety</li>
-            <li>Strong and Durable Materials</li>
-        </ul>
-
-        <a class="service-button" href="#contact">
-            Enquire Now →
-        </a>
-    </div>
-</article>
-<section id="projects" class="section projects-section">
-
-    <div class="section-intro">
-        <span class="kicker">OUR WORK</span>
-        <h2>Explore Our <em>Projects</em></h2>
-        <p>
-            Explore examples of modern safety and
-            space-saving solutions for your home.
-        </p>
-    </div>
-
-    <div class="projects-grid">
-
-        <article class="project-card">
-            <img src="assets/invisible-grills.jpg"
-                 alt="Invisible grills for balconies">
-
-            <div class="project-content">
-                <h3>Invisible Grill Solutions</h3>
-                <p>Modern balcony protection with clear views.</p>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <img src="assets/safety-nets.png"
-                 alt="Balcony safety net example">
-
-            <div class="project-content">
-                <h3>Balcony Safety Nets</h3>
-                <p>Protective netting for residential spaces.</p>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <img src="assets/cloth-hangers.png"
-                 alt="Ceiling cloth hanger example">
-
-            <div class="project-content">
-                <h3>Ceiling Cloth Hangers</h3>
-                <p>Smart and convenient clothes drying solutions.</p>
-            </div>
-        </article>
-
-    </div>
-
-</section>
-/* EFT ENTERPRISE - MODERN ABOUT SECTION */
 
 .about-modern {
     display: grid;
@@ -808,5 +748,13 @@ footer {
 @media (max-width: 480px) {
     .about-features {
         grid-template-columns: 1fr;
+    }
+}
+/* Mobile horizontal overflow protection */
+@media (max-width: 530px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
