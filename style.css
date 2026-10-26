@@ -758,3 +758,13 @@ footer {
         overflow-x: hidden;
     }
 }
+/* Keep homepage text above background elements */
+.hero {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
