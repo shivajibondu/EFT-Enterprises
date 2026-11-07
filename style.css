@@ -339,29 +339,65 @@ footer {
     padding: 27px
 }
 
+/* Compact contact buttons stay on the right while scrolling. */
 .floating {
     position: fixed;
-    right: 18px;
-    bottom: 22px;
-    display: grid;
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     gap: 10px;
-    z-index: 15
+    z-index: 50;
 }
 
 .floating a {
-    display: grid;
-    place-items: center;
-    background: #0da768;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 26px;
-    box-shadow: 0 5px 20px #0003
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 14px #0003;
 }
 
-.floating a:last-child {
-    background: #087bea
+.floating-call {
+    min-height: 44px;
+    padding: 0 15px;
+    gap: 8px;
+    border: 1px solid var(--cyan);
+    border-radius: 30px;
+    background: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.floating-call span { font-size: 20px; }
+.floating-call:hover { background: #10375e; }
+
+.floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #087f70;
+    font-size: 26px;
+}
+
+.floating a:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+/* Leave the end of the page clear of the fixed contact buttons. */
+footer { padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px)); }
+
+@media (max-width: 530px) {
+    .floating {
+        right: max(12px, env(safe-area-inset-right, 0px));
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        gap: 8px;
+    }
+    .floating-call { padding: 0 12px; font-size: 13px; }
+    .floating-whatsapp { width: 44px; height: 44px; }
 }
 
 @media(max-width:1150px) {
